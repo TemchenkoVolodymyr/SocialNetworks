@@ -1,14 +1,14 @@
-import React, {Component, useEffect} from "react";
+import React, { useEffect} from "react";
 import Profile from "./Profile";
-import {connect, useSelector} from "react-redux";
+import {connect } from "react-redux";
 import {
   getProfileThinkCreator, SetProfileStatus,
   setProfileStatusThinkCreator,
   SetUserProfile,
   updateProfileStatusThinkCreator
 } from "../../redux/profilePageReducer";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
-import {withProfileComponent} from "../../HOC/withProfileComponent";
+import {useParams} from "react-router-dom";
+
 import {compose} from "redux";
 import {getMyCurrentId, getProfileSuper, getStatus} from "../../redux/selector/profileSelector";
 import {getProfile} from "../../api/apiData";
@@ -17,12 +17,12 @@ import {editAuthUserProfile, getDataAuthorization, saveAvatarThinkCreator} from 
 
 const ProfileContainer = (props) => {
 
+  let currentId = useParams().profileId
 
-  let {
-    router, myCurrentId, getProfileThinkCreator, setProfileStatusThinkCreator, status, profile,
+  let { myCurrentId, getProfileThinkCreator, setProfileStatusThinkCreator, status, profile,
     updateProfileStatusThinkCreator, dispatch, saveAvatarThinkCreator, photos, getDataAuthorization,editAuthUserProfile
   } = props
-  let currentId = router.params.profileId
+
 
   useEffect(() => {
 
@@ -52,21 +52,6 @@ const ProfileContainer = (props) => {
 
 }
 
-export let withRouter = (Component) => {
-  function ComponentWithRouterProp(props) {
-    let location = useLocation();
-    let navigate = useNavigate();
-    let params = useParams();
-    return (
-      <Component
-        {...props}
-        router={{location, navigate, params}}
-      />
-    );
-  }
-
-  return ComponentWithRouterProp;
-}
 
 let mapStateToProps = (state) => ({
   profile: getProfileSuper(state),
@@ -76,8 +61,7 @@ let mapStateToProps = (state) => ({
 })
 
 
-export default compose(    //compose это функция от redux, она выполняет роль конвеера. Первая функция в очереди  это последння переданная (тут первая функция сработает withProfileComponent)
-  //Сработает она,потом свой результат передаст в withRouter , после,сработает withRouter и свой результат передаст в connect
+export default compose(
   connect(mapStateToProps, {
     SetUserProfile,
     getProfileThinkCreator,
@@ -87,7 +71,5 @@ export default compose(    //compose это функция от redux, она в
     getDataAuthorization,
     editAuthUserProfile
   }),
-  withRouter,
-  withProfileComponent //это HOC, внутрь этой функции(может быть классом) мы забрасываем параметром Компоненту которую хотим что бы она отрисовала когда сработает условие
 )(ProfileContainer)
 
