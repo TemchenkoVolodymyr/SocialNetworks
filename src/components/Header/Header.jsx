@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Header.module.css";
+import s from "./Header.module.scss";
 import {NavLink} from "react-router-dom";
 import logo from "../../assets/logo.png"
 import {useDispatch} from "react-redux";

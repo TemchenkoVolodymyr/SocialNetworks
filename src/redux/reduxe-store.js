@@ -1,12 +1,13 @@
 import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux'
 import ProfilePageReducer from "./profilePageReducer";
-import DialogPageReducer from "./dialogPageReducer";
+
 import SidebarPageReducer from "./sidebarPageReducer";
 import UsersPageReducer from "./UsersPageReducer";
 import AuthorizationReducer from "./AuthorizationReducer";
 import thunk from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 import AppReducer from "./appReducer";
+import DialogPageReducer from "./dialogPageReducer";
 
 
 
