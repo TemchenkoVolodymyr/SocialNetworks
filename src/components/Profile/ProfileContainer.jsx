@@ -1,28 +1,24 @@
-import React, { useEffect} from "react";
+import React, {useEffect} from "react";
 import Profile from "./Profile";
-import {connect } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
   getProfileThinkCreator, SetProfileStatus,
   setProfileStatusThinkCreator,
-  SetUserProfile,
-  updateProfileStatusThinkCreator
 } from "../../redux/profilePageReducer";
 import {useParams} from "react-router-dom";
-
-import {compose} from "redux";
-import {getMyCurrentId, getProfileSuper, getStatus} from "../../redux/selector/profileSelector";
 import {getProfile} from "../../api/apiData";
-import {editAuthUserProfile, getDataAuthorization, saveAvatarThinkCreator} from "../../redux/AuthorizationReducer";
 
 
 const ProfileContainer = (props) => {
 
   let currentId = useParams().profileId
 
-  let { myCurrentId, getProfileThinkCreator, setProfileStatusThinkCreator, status, profile,
-    updateProfileStatusThinkCreator, dispatch, saveAvatarThinkCreator, photos, getDataAuthorization,editAuthUserProfile
-  } = props
+  const profile = useSelector((state) => state.profilePage.profile);
+  const status = useSelector((state) => state.profilePage.status.data);
+  const myCurrentId = useSelector((state) => state.profilePage.myCurrentId);
+  const photos = useSelector((state) => state.authorization.image)
 
+  const dispatch = useDispatch()
 
   useEffect(() => {
 
@@ -31,45 +27,25 @@ const ProfileContainer = (props) => {
         dispatch(SetProfileStatus(response.data))
       })
 
-
     if (!currentId) {
       currentId = myCurrentId
     }
-    getProfileThinkCreator(currentId);
-    setProfileStatusThinkCreator(currentId)
+
+    dispatch(getProfileThinkCreator(currentId));
+    dispatch(setProfileStatusThinkCreator(currentId));
 
   }, [currentId])
 
   return (
     <div>
       <Profile {...props} status={status} profile={profile}
-               profileId={myCurrentId} updateStatus={updateProfileStatusThinkCreator} isOwner={currentId}
-               saveAvatar={saveAvatarThinkCreator} getProfile={getProfileThinkCreator} myId={myCurrentId}
-               myAvatar={photos} getAuth={getDataAuthorization} editProfile={editAuthUserProfile}
+               profileId={myCurrentId} isOwner={currentId}
+               myId={myCurrentId} myAvatar={photos}
       />
     </div>
   )
 
 }
 
-
-let mapStateToProps = (state) => ({
-  profile: getProfileSuper(state),
-  status: getStatus(state),
-  myCurrentId: getMyCurrentId(state),
-  photos: state.authorization.image
-})
-
-
-export default compose(
-  connect(mapStateToProps, {
-    SetUserProfile,
-    getProfileThinkCreator,
-    setProfileStatusThinkCreator,
-    updateProfileStatusThinkCreator,
-    saveAvatarThinkCreator,
-    getDataAuthorization,
-    editAuthUserProfile
-  }),
-)(ProfileContainer)
+export default ProfileContainer
 

@@ -3,12 +3,17 @@ import s from "./ProfileImg.module.css";
 import Loader from "../../../Loader/Loader";
 import {useDispatch} from "react-redux";
 import EditModeInput from "./editModeInput/EditModeInput";
+import {
+  editAuthUserProfile,
+  getDataAuthorization,
+  saveAvatarThinkCreator
+} from "../../../../redux/AuthorizationReducer";
 
 
 
 const ProfileImg = (props) => {
 
-  let {profile, isOwner, saveAvatar, myAvatar, getAuth,editProfile} = props
+  let {profile, isOwner, myAvatar} = props
 
   const [editMode, setEditMode] = useState(false)
 
@@ -30,8 +35,8 @@ const ProfileImg = (props) => {
   const dispatch = useDispatch()
 
   const changeAvatar = (e) => {
-    dispatch(getAuth)
-    saveAvatar(e.target.files[0])
+    dispatch(getDataAuthorization())
+    dispatch(saveAvatarThinkCreator(e.target.files[0]));
   }
 
   useEffect(() => {
@@ -40,7 +45,7 @@ const ProfileImg = (props) => {
     } else {
       setMyId(profile.userId)
     }
-  })
+  },[profile])
   
   let isGithub = github ? github : 'https://www.instagram.com/instagram/'
   let isVk = vk ? vk : 'https://www.instagram.com/instagram/'
@@ -65,7 +70,7 @@ const ProfileImg = (props) => {
     }
   }
   const setEditData = () => {
-    editProfile(data, myId)
+    dispatch(editAuthUserProfile(data, myId))
     setEditMode(!editMode)
   }
 

@@ -23,5 +23,4 @@ let reduces = combineReducers({
 let store = createStore(reduces,applyMiddleware(thunk));  // добавляем applyMiddleware(thunk - импортируем из redux-thunk который установили npm i redux-thunk)
 // Для того что бы можно было делать асинхронные запросы ( Если коректнее, но с помощю applyMiddleware мы получаем возможность в dispatch передевать функцию которая содержит группу action и запросы на сервер)
 
-
 export default store;

@@ -1,18 +1,18 @@
 import React from 'react';
 import s from "../../components/Users/User/User.module.css";
 
-const Pagination = (data) => {
+const Pagination = (props) => {
 
-  let pageCurrent = Math.ceil(data.totalUsersCount / data.pageSize);
+  let pageCurrent = Math.ceil(props.totalCount / props.pageSize);
   let pages = [];
 
-  for (let i = 1; i <= 50; i++) { // вместо 50 используем pageCurrent (все пользователи с axios запроса) их там много по этому установил 50
+  for (let i = 1; i <= 50; i++) {
     pages.push(i);
   }
 
 
-  let page = pages.map(page => <span className={data.data.current === page && s.active} onClick={() => {
-    data.currentPageData(page)
+  let page = pages.map(page => <span className={props.current === page && s.active} onClick={() => {
+    props.currentPageData(page)
   }}>{page}</span>);
 
   return (

@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {getProfile} from "../../../../api/apiData";
 import {updateProfileStatusThinkCreator} from "../../../../redux/profilePageReducer";
+import {useDispatch} from "react-redux";
 
 
 
 const ProfileStatusWithHooks = (props) => {
 
-  let {status,updateStatus} = props
+  let {status} = props
 
   const [editMode,setEditMode] = useState(false);
   const [newStatus,setNewStatus] = useState(status);
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
    setNewStatus(status)
@@ -27,7 +29,7 @@ const ProfileStatusWithHooks = (props) => {
     setEditMode(
       false
     )
-    updateStatus(newStatus)
+    dispatch(updateProfileStatusThinkCreator(newStatus))
   }
 
   const onChangeStatus = (e) => {

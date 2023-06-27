@@ -3,25 +3,30 @@ import s from "./User.module.css"
 import {NavLink} from "react-router-dom";
 import defaultPhoto from "../../../assets/default.png"
 import {followStatus} from "../../../api/apiData";
+import {useDispatch} from "react-redux";
+import {followThunkCreator} from "../../../redux/UsersPageReducer";
 
-const User = (data) => {
+const User = (props) => {
 
-  let currentUser = data.data
+  const dispatch = useDispatch();
+
+  let currentUser = props.data.user
+  console.log(currentUser)
 
   return (
     <>
-      {currentUser.data.users ? currentUser.data.users.map(user => <div key={user.id}>
+      {currentUser ? currentUser.map(user => <div key={user.id}>
           <div className={s.container}>
             <div className={s.wrapperImage}>
               <NavLink to={"/profile/" + user.id}>
                 <img alt="DefaultImage" src={user.photos.small != null ? user.photos.small : defaultPhoto}/> </NavLink>
               <p>
                 {user.followed
-                  ? <button disabled={currentUser.data.isProgress.some(id => id === user.id)} onClick={() => {
-                    currentUser.data.followThunkCreator(user.id, followStatus.deleteFollow(user.id))     // тут происходит асинхронный запрос на сервер в usersPageReducer
+                  ? <button disabled={props.data.isProgress.some(id => id === user.id)} onClick={() => {
+                    dispatch(followThunkCreator(user.id, followStatus.deleteFollow(user.id)))
                   }}>unfollow</button>
-                  : <button disabled={currentUser.data.isProgress.some(id => id === user.id)} onClick={() => {
-                    currentUser.data.followThunkCreator(user.id, followStatus.postFollow(user.id))  // тут происходит асинхронный запрос на сервер в usersPageReducer
+                  : <button disabled={props.data.isProgress.some(id => id === user.id)} onClick={() => {
+                    dispatch(followThunkCreator(user.id, followStatus.postFollow(user.id)))
 
                   }}>follow</button>}
               </p>

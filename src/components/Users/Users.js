@@ -2,11 +2,12 @@ import React from "react";
 import Pagination from "../../utilits/Pagenation/Pagination";
 import User from "./User/User";
 
-const Users = (data) => {
+const Users = (props) => {
+  console.log(props)
   return (
     <>
-        {Pagination(data)}
-      <User data={data}/>
+        {Pagination(props)}
+      <User data={props}/>
     </>
   )
 }
