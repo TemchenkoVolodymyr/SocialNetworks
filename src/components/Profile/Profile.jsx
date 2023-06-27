@@ -1,11 +1,8 @@
 import React from "react";
 import s from "./Profile.module.css";
-import MyPosts from "./MyPosts/MyPosts";
 import ProfilesInfo from "./Profileinfo/Profileinfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
-import ProfileUser from "../Users/ProfileUsers/Profile";
-import {Navigate} from "react-router-dom";
-import {getProfile} from "../../api/apiData";
+
 
 
 const Profile = (props) => {

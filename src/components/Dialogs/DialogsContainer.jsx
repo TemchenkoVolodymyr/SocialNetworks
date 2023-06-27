@@ -14,7 +14,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     addNewMessage: (text) => {
-      console.log(text)
+
       dispatch(ShowNewMessageText(text));
       dispatch(AddNewMessageText('2'));
     },
@@ -24,7 +24,6 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),// compose это функция от redux, она выполняет роль конвеера. Первая функция в очереди  это последння переданная (тут первая функция сработает withProfileComponent)
-  // Сработает она,потом свой результат передаст  в connect
+  connect(mapStateToProps, mapDispatchToProps),
   withProfileComponent,
 )(Dialogs)

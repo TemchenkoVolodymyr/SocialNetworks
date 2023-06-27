@@ -88,6 +88,6 @@ export default compose(    //compose это функция от redux, она в
     editAuthUserProfile
   }),
   withRouter,
-  withProfileComponent, withProfileComponent //это HOC, внутрь этой функции(может быть классом) мы забрасываем параметром Компоненту которую хотим что бы она отрисовала когда сработает условие
+  withProfileComponent //это HOC, внутрь этой функции(может быть классом) мы забрасываем параметром Компоненту которую хотим что бы она отрисовала когда сработает условие
 )(ProfileContainer)
 

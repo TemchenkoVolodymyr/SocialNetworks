@@ -1,36 +1,24 @@
-import React, {Component} from "react";
+import React from "react";
 import Header from "./Header";
-import {connect} from "react-redux";
-import {getDataAuthorization} from "../../redux/AuthorizationReducer";
-import {compose} from "redux";
+import {useSelector} from "react-redux";
 
-class HeaderContainer extends Component {
-  componentDidMount() {
-  }
 
-  render() {
-    return (
-      <>
-        <Header {...this.props}/>
-      </>
-    )
-  }
+
+const HeaderContainer = () => {
+
+  const isAuth = useSelector((state) => state.authorization.isAuth);
+  const login = useSelector((state) => state.authorization.login)
+  const idUser = useSelector((state) => state.authorization.userId)
+  const photos = useSelector((state) => state.authorization.image)
+
+
+  return (
+    <>
+      <Header isAuth={isAuth} login={login} idUser={idUser} photos={photos}/>
+    </>
+  )
 }
+export default HeaderContainer
 
-let mapStateToProps = (state) => ({
 
-    isAuth: state.authorization.isAuth,
-    login: state.authorization.login,
-    idUser: state.authorization.userId,
-    photos: state.authorization.image
-
-  }
-)
-export default compose(
-     /*(3)*/ connect(mapStateToProps, {getDataAuthorization})
-    // (2) some function
-    // (1)some function
-    (HeaderContainer))
-// compose это функция от redux, она выполняет роль конвеера. Первая функция в очереди  это последння переданная (тут первая функция сработает (1)some function)
-// Сработает она,потом свой результат передаст в (2)some function , после результат  передаст в connect
 

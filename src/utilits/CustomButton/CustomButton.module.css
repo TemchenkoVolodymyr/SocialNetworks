@@ -1,0 +1,16 @@
+.hh {
+  background-color: transparent;
+  color: rgba(159, 14, 58, 0.75);
+  border: 1px solid rgba(159, 14, 58, 0.75);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 20px;
+}
+.hh:hover {
+  background-color: #850c30;
+  color: #fcfcfc;
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
+
+/*# sourceMappingURL=CustomButton.module.css.map */

@@ -5,15 +5,16 @@ import VisibilityFriends from "./Friends/sideVisibilityFriends";
 
 const SideFriends = (props) => {
 
-    const Friend = props.friends
-        .map(friend => <VisibilityFriends img={friend.img} key={friend.id} name={friend.name}/> )
-    return (
-        <div>
-            <div className={s.friends__header}>FRIENDS</div>
-            <div className ={s.friends__grid}>
-                {Friend}
-        </div>
-        </div>
-    )};
+  const friends = props.friends
+    .map(friend => <VisibilityFriends img={friend.img} key={friend.id} name={friend.name}/>)
+  return (
+    <div>
+      <div className={s.friends__header}>FRIENDS</div>
+      <div className={s.friends__grid}>
+        {friends}
+      </div>
+    </div>
+  )
+};
 
 export default SideFriends;

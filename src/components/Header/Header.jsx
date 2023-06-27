@@ -2,16 +2,18 @@ import React from "react";
 import s from "./Header.module.css";
 import {NavLink} from "react-router-dom";
 import logo from "../../assets/logo.png"
-import {connect} from "react-redux";
+import {useDispatch} from "react-redux";
 import {deleteLogin} from "../../redux/profilePageReducer";
 
 
 const Header = (props) => {
 
-  let {isAuth,login,photos,dispatch} = props
+  const dispatch = useDispatch()
+
+  const {isAuth,login,photos} = props
 
 
-  let ava =  photos && photos
+  const myAvatar =  photos && photos
 
   const logOuting = () => {
 
@@ -28,9 +30,9 @@ const Header = (props) => {
             {isAuth ?  <NavLink to={"/login"}>{login}</NavLink> :  <NavLink to={"/login"}>Login</NavLink>}
             {isAuth ? <button onClick={() => logOuting()}>Log out</button> : null}
           </div>
-          <img className={s.header_image} src={ava} />
+          <img className={s.header_image} src={myAvatar} alt={'avatar'} />
         </header>
     )
 }
 
-export default connect()(Header);
+export default Header;
