@@ -11,7 +11,6 @@ const User = (props) => {
   const dispatch = useDispatch();
 
   let currentUser = props.data.user
-  console.log(currentUser)
 
   return (
     <>

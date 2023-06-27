@@ -3,7 +3,7 @@ import Pagination from "../../utilits/Pagenation/Pagination";
 import User from "./User/User";
 
 const Users = (props) => {
-  console.log(props)
+
   return (
     <>
         {Pagination(props)}
