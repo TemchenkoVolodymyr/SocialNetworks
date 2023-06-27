@@ -1,0 +1,21 @@
+
+  .inputPost{
+    border: none;
+    background-color: rgb(181, 212, 199);
+    width: 100%;
+    height: 70px;
+    font-size: 20px;
+    
+  }
+  .btnPost{
+    font-size: 16px;
+     padding: 10px 15px;
+     color:rgb(253, 253, 253); 
+    float: right;
+    background-color:rgb(177, 92, 13);
+    border:none;
+    margin-top: 15px;
+  }
+  .posts{
+    font-size: 30px;
+  }

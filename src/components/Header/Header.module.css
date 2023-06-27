@@ -1,0 +1,26 @@
+.header {
+    grid-column: 1/3;
+    grid-row: 1;
+
+    display: flex;
+}
+
+header img {
+    max-width: 110px;
+}
+.name{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items:center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color:rgb(0, 0, 0);
+  }
+.loginBlock{
+    float: right;
+}
+.header_image{
+    max-width: 50px;
+    max-height: 50px;
+}

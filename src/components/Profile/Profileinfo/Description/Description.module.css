@@ -1,0 +1,14 @@
+
+.description img{
+    width: 200px;
+    height: 200px;
+}
+.description{
+    display: flex;
+    padding-top: 40px;
+
+}
+.headerText{
+    max-width: 200px;
+    padding-left: 50px;
+}

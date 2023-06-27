@@ -1,0 +1,23 @@
+.nav {
+    grid-column: 1;
+    grid-row: 2/3;
+
+}
+
+.nav div {
+    padding-bottom: 25px;
+}
+.friends__grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+.friends__grid img{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+.friends__hedear{
+    margin-top: 150px;
+    font-size: 30px;
+}

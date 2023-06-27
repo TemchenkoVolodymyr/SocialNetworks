@@ -1,0 +1,13 @@
+.dialogs{
+display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+.textarea{
+    margin-top: 50px;
+}
+textarea{
+    width: 500px;
+    height: 100px;
+    font-size: 25px;
+}

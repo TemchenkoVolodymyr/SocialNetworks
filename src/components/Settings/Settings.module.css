@@ -1,0 +1,23 @@
+.nav {
+    grid-column: 1;
+    grid-row: 2/3;
+
+}
+
+.item {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.item a {
+   text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.item .activeLink {
+    color: #850c30;
+}
+.nav div {
+    padding-bottom: 25px;
+}

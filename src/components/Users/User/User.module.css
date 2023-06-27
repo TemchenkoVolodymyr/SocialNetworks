@@ -1,0 +1,33 @@
+.container{
+    max-width: 1200px;
+    display: flex;
+}
+.wrapperImage{
+    max-width: 20%;
+    margin-top: 17px;
+
+
+}
+.wrapperImage img{
+    max-width: 60%;
+    border-radius: 25px;
+}
+.wrapperDescription{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    border: 1px solid brown;
+    border-radius: 17px;
+    margin: 10px;
+    padding: 10px;
+}
+.active{
+    font-weight: bolder;
+}
+span:hover{
+    cursor: pointer;
+
+}
+span{
+    padding-right: 5px;
+}

@@ -1,0 +1,15 @@
+
+  .post  img {
+    max-width: 70px;
+    max-height: 100px;
+    border-radius: 50px;
+  }
+  .post {
+    display: flex;
+    margin: 50px 0;
+   
+  }
+  .comments{
+    margin-left: 50px;
+  }
+  
