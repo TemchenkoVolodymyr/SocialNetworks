@@ -15,6 +15,7 @@ import Loader from "./components/Loader/Loader";
 import Login from "./components/Login/Login";
 import NavBar from "./components/Nav/NavBar";
 import Layout from "./router/Layout";
+import CurrentDialog from "./components/Dialogs/CurrentDialog/CurrentDialog";
 
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
           <Route path={'/'} element={<Layout/>}>
           <Route path="/profile/:profileId?" element={<ProfileContainer/>}/>
           <Route path="/dialogs/*" element={<DialogsContainer/>}/>
+            <Route path='/dialogs/:key' element={<CurrentDialog/>} />
           <Route path="/news" element={<News/>}/>
           <Route path="/musics" element={<Musics/>}/>
           <Route path="/settings" element={<Settings/>}/>

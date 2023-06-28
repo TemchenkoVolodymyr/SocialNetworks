@@ -1,4 +1,6 @@
-
+.container{
+  padding: 15px;
+}
   .inputPost{
     border: none;
     background-color: rgb(181, 212, 199);
@@ -18,4 +20,5 @@
   }
   .posts{
     font-size: 30px;
+    color: #850c30;
   }

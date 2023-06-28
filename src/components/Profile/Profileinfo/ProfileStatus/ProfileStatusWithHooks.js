@@ -49,7 +49,7 @@ const ProfileStatusWithHooks = (props) => {
       :
       <div className={s.statusWrapper}>
       <p>My status :</p>
-      <span onDoubleClick={startEditInputMode}>{newStatus ? newStatus : 's'}</span>
+      <span onDoubleClick={startEditInputMode}>{newStatus}</span>
       </div>}
 
   </div>

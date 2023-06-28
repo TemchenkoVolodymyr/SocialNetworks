@@ -15,7 +15,6 @@ const ProfileContainer = (props) => {
 
   const profile = useSelector((state) => state.profilePage.profile);
   const status = useSelector((state) => state.profilePage.status.data);
-  console.log(status)
   const myCurrentId = useSelector((state) => state.profilePage.myCurrentId);
   const photos = useSelector((state) => state.authorization.image)
 

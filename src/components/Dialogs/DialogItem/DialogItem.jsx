@@ -1,19 +1,27 @@
 import React from "react";
-import s from "./DialogItem.module.css"
+import s from "./DialogItem.module.scss"
 import {NavLink} from "react-router-dom";
+import MessageItem from "../MessageItem/MessageItem";
 
 const DialogItem = (props) => {
-    let toAddress = "/dialogs/" + props.id;
+
+  const {name,image,idDialog,text,date} = props
+  console.log(idDialog)
+    let toAddress =   "/dialogs/" + idDialog;
     return (
         <div className={s.dialog}>
-            <div className={s.wrapper__dialog}>
+            <div className={s.wrapperDialog}>
                 <img
-                    src="https://th.bing.com/th/id/R.7a5b8b8f2c06d86438fa0ca1d1a6e81e?rik=6mW1IbIQA718KQ&pid=ImgRaw&r=0"
+                    src={image}
                     alt="avatar"/>
-
                 <NavLink to={toAddress}
-                         className={navData => navData.isActive ? s.activeLink : s.dialog}>{props.name}</NavLink>
+                         className={navData => navData.isActive ? s.activeLink : s.dialog}>{name}</NavLink>
             </div>
+          <div key={idDialog} className={s.message}>
+            {text && text[0]}
+            <p>last message was {date}</p>
+          </div>
+
         </div>
     );
 }

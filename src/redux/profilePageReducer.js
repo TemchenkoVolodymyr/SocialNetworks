@@ -68,7 +68,6 @@ const ProfilePageReducer = (state = initialState, action) => {
       }
     }
     case SET_USER_PROFILE: {
-      console.log(action.profile)
       return {
         ...state,
         profile: action.profile
@@ -93,7 +92,7 @@ const ProfilePageReducer = (state = initialState, action) => {
 
 
 export const ShowNewPostText = (text) => {
-  console.log(text)
+
   return {
     type: SHOW_NEW_POST_TEXT,
     text: text,

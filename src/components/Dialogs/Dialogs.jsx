@@ -1,29 +1,47 @@
-import React from "react";
-import s from "./Dialogs.module.css"
+import React, {useEffect} from "react";
+import s from "./Dialogs.module.scss"
 import DialogItem from "./DialogItem/DialogItem";
-import MessageItem from "./MessageItem/MessageItem";
-import FormDialogs from "./FormDialogs";
+import FormDialogs from "./FormDialog/FormDialogs";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "../../firebase/firebase";
+import {useDispatch, useSelector} from "react-redux";
+import {SetDialogsDatabase} from "../../redux/dialogPageReducer";
 
 
 const Dialogs = (props) => {
 
   const {dialogPage, addNewMessage} = props
+  const dispatch = useDispatch()
+
+  const dialogDataBase = useSelector((state) => state.dialogPage.data)
+  console.log(dialogDataBase)
+
+  useEffect(() => {
+    const getDialogsFromDatabase = async () => {
+      const querySnapshot = await getDocs(collection(db, `messages`));
+      querySnapshot.forEach((doc) => {
+        if (doc.id === 'dialogs') {
+          dispatch(SetDialogsDatabase(doc.data()))
+        }
+      });
+    }
+    getDialogsFromDatabase().catch((error) => console.log(error))
+  }, [])
+
+
   const showNewMessage = (message) => {
     addNewMessage(message)
-
   }
-  const DialogItems = dialogPage.dialogsItem
-    .map(post => <DialogItem name={post.name} key={post.id} id={post.id}/>)
-  const PostItems = dialogPage.messageItem
-    .map(post => <MessageItem text={post.text} key={post.id}/>)
+console.log(dialogDataBase)
+  const DialogItems = dialogDataBase?.messages?.map(item => <DialogItem name={item.name} idDialog={item.id}
+                                                                        image={item.image} date={item.date}
+                                                                        text={item.items}></DialogItem>)
+
   return (
     <>
       <div className={s.dialogs}>
-        <div>
+        <div className={s.wrapperDialogs}>
           {DialogItems}
-        </div>
-        <div>
-          {PostItems}
         </div>
         <FormDialogs showNewMessage={showNewMessage}/>
       </div>

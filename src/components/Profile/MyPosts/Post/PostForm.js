@@ -3,6 +3,8 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {Textarea} from "../../../../validationForm/FormsControls/FormControls";
 import {maxLengthCreator, minLengthCreator, requiredField} from "../../../../validationForm/validations";
+import CustomButton from "../../../../utilits/CustomButton/CustomButton";
+import s from './PostForm.module.scss'
 
 
 const maxlength = maxLengthCreator(50);
@@ -11,11 +13,11 @@ export const PostForm = (props) => {
   const {handleSubmit} = props
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className={s.wrapperInput}>
         <Field name="post" component={Textarea} type="text" placeholder="your message..." validate={[requiredField,maxlength]}/>
       </div>
       <div>
-        <button>Send</button>
+        <CustomButton name={'send'}></CustomButton>
       </div>
     </form>
   )

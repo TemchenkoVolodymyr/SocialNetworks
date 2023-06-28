@@ -14,7 +14,7 @@ const MyPosts = (props) => {
         .map(post => <Post message={post.message} key={post.id} like={post.like} img={post.img}/>)
 
     return(
-    <div>
+    <div className={s.container}>
         <h3 className={s.posts}>My posts</h3>
         <FormPosts addNewPost={NewPost}/>
         {PostItems}
