@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import logo from "../../assets/logo.png"
 import {useDispatch} from "react-redux";
 import {deleteLogin} from "../../redux/profilePageReducer";
+import CustomButton from "../../utilits/CustomButton/CustomButton";
 
 
 const Header = (props) => {
@@ -11,7 +12,6 @@ const Header = (props) => {
   const dispatch = useDispatch()
 
   const {isAuth,login,photos} = props
-
 
   const myAvatar =  photos && photos
 
@@ -22,15 +22,20 @@ const Header = (props) => {
 
     return (
         <header className={s.header}>
+          <NavLink to={'/'} >
             <img src={logo} alt="logoImage" />
-            <div className={s.name}>
-               SOCIAL
+          </NavLink>
+            <div className={s.headerName}>
+           <h1>Make friends easily </h1>
             </div>
           <div className={s.loginBlock}>
-            {isAuth ?  <NavLink to={"/login"}>{login}</NavLink> :  <NavLink to={"/login"}>Login</NavLink>}
-            {isAuth ? <button onClick={() => logOuting()}>Log out</button> : null}
+            <div className={s.headerInfo}>
+            <img className={s.header_image} src={myAvatar} alt={'avatar'} />
+            {isAuth ?  <NavLink to={'/profile'}>{login}</NavLink> :  <NavLink to={"/login"}>Login</NavLink>}
+            </div>
+            {/*{isAuth ? <button onClick={() => logOuting()}>Log out</button> : null}*/}
+            {isAuth ? <CustomButton callback={logOuting} name={'logout'}></CustomButton> : null}
           </div>
-          <img className={s.header_image} src={myAvatar} alt={'avatar'} />
         </header>
     )
 }

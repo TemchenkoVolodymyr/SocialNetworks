@@ -1,0 +1,31 @@
+
+.containerTopLayout {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.containerNav{
+  max-width: 270px;
+  width: 100%;
+  margin-left: 10px;
+  background-color: rgb(27 64 52 / 8%);
+
+}
+.containerMain{
+  width: 100%;
+  background-color: rgb(27 64 52 / 8%);
+  margin: 0 15px;
+
+}
+.containerSideBar{
+  max-width: 200px;
+  width: 100%;
+  margin-right: 10px;
+  background-color: rgb(27 64 52 / 8%);
+
+}
+.header{
+margin-bottom: 30px;
+}

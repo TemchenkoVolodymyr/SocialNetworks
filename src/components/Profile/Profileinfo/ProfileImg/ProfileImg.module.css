@@ -1,7 +1,35 @@
-
-.HeaderImg img {
-    max-width: 300px;
-    max-height: 200px;
-    border-radius: 80px;
+.infoProfile {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.infoProfile img {
+  max-width: 150px;
+  border-radius: 80px;
+  margin-bottom: 15px;
 }
 
+.profileAvatar {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.wrapperInput {
+  display: flex;
+  align-items: center;
+}
+
+.wrapperAvatar {
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 160px;
+  background-size: contain;
+}
+
+.activeEditMode {
+  background-color: #850c30;
+  width: 100%;
+}
+
+/*# sourceMappingURL=ProfileImg.module.css.map */

@@ -1,0 +1,19 @@
+.item {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.item a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    &:hover{
+        color: rgba(255, 0, 0, 0.93);
+        transition: ease-in-out 0.2s;
+    }
+
+}
+.item .activeLink {
+    color: #850c30;
+}

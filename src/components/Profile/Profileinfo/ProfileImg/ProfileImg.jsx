@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import s from "./ProfileImg.module.css";
+import s from "./ProfileImg.module.scss";
 import Loader from "../../../Loader/Loader";
 import {useDispatch} from "react-redux";
 import EditModeInput from "./editModeInput/EditModeInput";
@@ -8,6 +8,7 @@ import {
   getDataAuthorization,
   saveAvatarThinkCreator
 } from "../../../../redux/AuthorizationReducer";
+import CustomButton from "../../../../utilits/CustomButton/CustomButton";
 
 
 
@@ -79,41 +80,64 @@ const ProfileImg = (props) => {
   }
   return (
     <>
-      <div className={s.HeaderImg}>
-        <img src={isOwner ? profile.photos.small : myAvatar} alt="Profile Avatar"/>
-        <button onClick={setEditData}>edit my info</button>
-        <div> Username :
-          {editMode ? <EditModeInput placeholder={'Change your username'} value={name} setValue={setName}/> :
-            <p>{profile && profile.fullName}</p>}
+      <section className={s.infoProfile}>
+        <div className={s.profileAvatar}>
+          <div className={s.wrapperAvatar} style={{backgroundImage:`url(${myAvatar})`}}>
+        {/*<img src={isOwner ? profile.photos.small : myAvatar} alt="Profile Avatar"/>*/}
+            <span className={editMode ? 'activeEditMode' : null}></span>
+          </div>
+          {!isOwner ? <input type={'file'} onChange={changeAvatar}/> : null}
+          <div className={s.wrapperInput}> Username :
+            {editMode ? <EditModeInput placeholder={'Change your username'} value={name} setValue={setName}/> :
+              <p>{profile && profile.fullName}</p>}
+          </div>
+          <div className={s.wrapperInput}> Job description :
+            {editMode ?
+              <EditModeInput placeholder={'Job description'} value={jobDescription} setValue={setJobDescription}/> :
+              <p> {profile && profile.lookingForAJobDescription}</p>}
+          </div>
+          <div className={s.wrapperInput} >Looking for job : {profile && profile.lookingForAJob ? <p>Yes</p> : <p>NO</p>} </div>
+          <CustomButton callback={setEditData} name={'Edit my info'}></CustomButton>
         </div>
-        <div> About me :
+        <div className={s.infoAboutUser}>
+
+        <div className={s.wrapperInput}> About me :
           {editMode ? <EditModeInput placeholder={'About me'} value={aboutMe} setValue={setAboutMe}/> :
             <p>{profile && profile.aboutMe}</p>}
         </div>
-        <div> Job description :
-          {editMode ?
-            <EditModeInput placeholder={'Job description'} value={jobDescription} setValue={setJobDescription}/> :
-            <p> {profile && profile.lookingForAJobDescription}</p>}
         </div>
-        <div>Looking for job : {profile && profile.lookingForAJob ? <p>Yes</p> : <p>NO</p>} </div>
         <div> Social links
+          <div className={s.wrapperInput}>
           {editMode ? <EditModeInput placeholder={'facebook'} value={facebook} setValue={setFacebook}/> :
             <p>{profile && profile.contacts.facebook}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           github : {editMode ? <EditModeInput placeholder={'github'} value={github} setValue={setGithub}/> :
             <p>{profile && profile.contacts.github}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           instagram : {editMode ? <EditModeInput placeholder={'instagram'} value={instagram} setValue={setInstagram}/> :
             <p>{profile && profile.contacts.instagram}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           twitter : {editMode ? <EditModeInput placeholder={'twitter'} value={twitter} setValue={setTwitter}/> :
             <p>{profile && profile.contacts.twitter}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           youtube : {editMode ? <EditModeInput placeholder={'youtube'} value={youtube} setValue={setYoutube}/> :
             <p>{profile && profile.contacts.youtube}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           website : {editMode ? <EditModeInput placeholder={'website'} value={website} setValue={setWebsite}/> :
             <p>{profile && profile.contacts.website}</p>}
+          </div>
+          <div className={s.wrapperInput}>
           vk : {editMode ? <EditModeInput placeholder={'vkontakte'} value={vk} setValue={setVk}/> :
           <p>{profile && profile.contacts.vk}</p> }
+          </div>
         </div>
-        {!isOwner ? <input type={'file'} onChange={changeAvatar}/> : null}
-      </div>
+
+      </section>
     </>
   )
 }

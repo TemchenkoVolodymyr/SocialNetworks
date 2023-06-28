@@ -1,0 +1,30 @@
+.containerTopLayout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerNav {
+  max-width: 270px;
+  width: 100%;
+  margin-left: 10px;
+  background-color: rgba(27, 64, 52, 0.08);
+}
+
+.containerMain {
+  width: 100%;
+  background-color: rgba(27, 64, 52, 0.08);
+  margin: 0 15px;
+}
+
+.containerSideBar {
+  max-width: 200px;
+  width: 100%;
+  margin-right: 10px;
+  background-color: rgba(27, 64, 52, 0.08);
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+/*# sourceMappingURL=Layout.module.css.map */

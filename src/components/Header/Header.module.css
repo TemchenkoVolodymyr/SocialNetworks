@@ -2,7 +2,7 @@
   grid-column: 1/3;
   grid-row: 1;
   display: flex;
-  background-color: rgba(2, 2, 2, 0.21);
+  background-color: rgba(27, 64, 52, 0.08);
   justify-content: space-between;
   align-items: center;
 }
@@ -14,7 +14,7 @@ header img {
   max-width: 100px;
 }
 
-.name {
+.headerName {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   align-items: center;
@@ -23,14 +23,33 @@ header img {
   font-size: 50px;
   color: rgb(0, 0, 0);
 }
+.headerName h1 {
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Agency FB";
+  color: #850c30;
+}
 
 .loginBlock {
   float: right;
+  display: flex;
+  align-items: center;
+}
+.loginBlock button {
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .header_image {
   max-width: 50px;
   max-height: 50px;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=Header.module.css.map */
