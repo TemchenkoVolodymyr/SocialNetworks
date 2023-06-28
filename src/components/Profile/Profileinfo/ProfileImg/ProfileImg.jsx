@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import s from "./ProfileImg.module.scss";
 import Loader from "../../../Loader/Loader";
 import {useDispatch} from "react-redux";
@@ -9,6 +9,7 @@ import {
   saveAvatarThinkCreator
 } from "../../../../redux/AuthorizationReducer";
 import CustomButton from "../../../../utilits/CustomButton/CustomButton";
+import {HiPhotograph} from "react-icons/hi";
 
 
 
@@ -32,12 +33,20 @@ const ProfileImg = (props) => {
 
   const [myId, setMyId] = useState("");
 
+  const [focusChangeAvatar,setFocusChangeAvatar] = useState(false)
+
 
   const dispatch = useDispatch()
 
   const changeAvatar = (e) => {
     dispatch(getDataAuthorization())
     dispatch(saveAvatarThinkCreator(e.target.files[0]));
+  }
+
+  const fileInputRef = useRef(null);
+
+  const handleClickOpenInputFile = () => {
+    fileInputRef.current.click()
   }
 
   useEffect(() => {
@@ -82,11 +91,10 @@ const ProfileImg = (props) => {
     <>
       <section className={s.infoProfile}>
         <div className={s.profileAvatar}>
-          <div className={s.wrapperAvatar} style={{backgroundImage:`url(${myAvatar})`}}>
-        {/*<img src={isOwner ? profile.photos.small : myAvatar} alt="Profile Avatar"/>*/}
-            <span className={editMode ? 'activeEditMode' : null}></span>
+          <div className={s.wrapperAvatar} style={{backgroundImage:`url(${myAvatar})`}} onFocus={() => setFocusChangeAvatar(true)} onClick={handleClickOpenInputFile}>
+            <span className={ s.activeEditMod }><HiPhotograph size={50}></HiPhotograph></span>
           </div>
-          {!isOwner ? <input type={'file'} onChange={changeAvatar}/> : null}
+          {!isOwner ? <input className={s.inputFile} type={'file'} onChange={changeAvatar} ref={fileInputRef}/> : null}
           <div className={s.wrapperInput}> Username :
             {editMode ? <EditModeInput placeholder={'Change your username'} value={name} setValue={setName}/> :
               <p>{profile && profile.fullName}</p>}
