@@ -1,17 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import {updateProfileStatusThinkCreator} from "../../../../redux/profilePageReducer";
-import {useDispatch} from "react-redux";
+import {
+  getProfileThinkCreator, SetProfileStatus,
+  setProfileStatusThinkCreator,
+  updateProfileStatusThinkCreator
+} from "../../../../redux/profilePageReducer";
+import {useDispatch, useSelector} from "react-redux";
+import s from './ProfileStatusWithHooks.module.scss'
+import {getProfile} from "../../../../api/apiData";
 
 
 
 const ProfileStatusWithHooks = (props) => {
 
-  let {status} = props
-
+  // let {status} = props
+  const status = useSelector((state) => state.profilePage.status.data);
   const [editMode,setEditMode] = useState(false);
-  const [newStatus,setNewStatus] = useState(status);
+  const [newStatus,setNewStatus] = useState('');
 
   const dispatch = useDispatch()
+
 
   useEffect(() => {
    setNewStatus(status)
@@ -29,7 +36,7 @@ const ProfileStatusWithHooks = (props) => {
     setEditMode(
       false
     )
-    dispatch(updateProfileStatusThinkCreator(newStatus))
+    dispatch(updateProfileStatusThinkCreator(newStatus,props.profileId))
   }
 
   const onChangeStatus = (e) => {
@@ -38,9 +45,12 @@ const ProfileStatusWithHooks = (props) => {
   return (
   <div>
     {editMode ?
-      <input autoFocus={true} onBlur={() => finishEditMode()} type="text" value={newStatus} onChange={onChangeStatus}/>
+      <input autoFocus={true} onBlur={finishEditMode} type="text" value={newStatus} onChange={onChangeStatus}/>
       :
-      <span onDoubleClick={startEditInputMode}>{newStatus}</span>}
+      <div className={s.statusWrapper}>
+      <p>My status :</p>
+      <span onDoubleClick={startEditInputMode}>{newStatus ? newStatus : 's'}</span>
+      </div>}
 
   </div>
   )

@@ -147,11 +147,11 @@ export const setProfileStatusThinkCreator = (userId) => {
   }
 }
 
-export const updateProfileStatusThinkCreator = (status) => {
+export const updateProfileStatusThinkCreator = (status,id) => {
   return async (dispatch) => {
     let response = await getProfile.updateStatusProfile(status)
     if (response.data.resultCode === 0) {
-      dispatch(SetProfileStatus(status))
+      dispatch(setProfileStatusThinkCreator(id))
     }
   }
 }

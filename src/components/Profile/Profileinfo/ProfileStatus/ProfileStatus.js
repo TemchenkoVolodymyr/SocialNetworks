@@ -4,7 +4,6 @@ import {getProfile} from "../../../../api/apiData";
 
 const ProfileStatus = (props) => {
 
-  console.log([props])
   const [editMode, setEditMode] = useState(false)
   const [status, setStatus] = useState(props.status.data)
 

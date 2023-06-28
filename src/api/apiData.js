@@ -91,16 +91,16 @@ export const authorization = {
       lookingForAJob : data.lookingForAJob,
       lookingForAJobDescription : data.lookingForAJobDescription,
       fullName:data.fullName,
-      aboutMe:"sadsd",
+      aboutMe:data.aboutMe,
       contacts:{
         github:data.contacts.github,
-        vk:'https://www.instagram.com/instagram/',
+        vk:data.contacts.vk,
         facebook:data.contacts.facebook,
         instagram:data.contacts.instagram,
         twitter:data.contacts.twitter,
         website:data.contacts.website,
         youtube:data.contacts.youtube,
-        mainLink:"https://www.instagram.com/instagram/",
+        mainLink:data.contacts.mainLink,
       }
     })
       .then(response => response.data)

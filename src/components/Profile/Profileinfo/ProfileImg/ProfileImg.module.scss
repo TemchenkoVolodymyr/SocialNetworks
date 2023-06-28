@@ -1,49 +1,89 @@
 
+.infoProfile {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
 
-.infoProfile{
-    padding:15px;
-    display: flex;
-    justify-content: space-between;
-    img{
-        max-width: 150px;
-        border-radius: 80px;
-        margin-bottom: 15px;
-    }
+  img {
+    max-width: 150px;
+    border-radius: 80px;
+    margin-bottom: 15px;
+  }
 }
-.profileAvatar{
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
+
+.profileAvatar {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
 }
-.wrapperInput{
+
+.wrapperInput {
+  display: flex;
+  align-items: center;
+
+  a {
     display: flex;
     align-items: center;
-}
-.infoAboutUser{
+    padding-bottom: 15px;
+    text-decoration: none;
+    color: rgba(133, 12, 48, 0.55);
+    font-size: 13px;
 
-}
-.wrapperAvatar{
-    background-repeat: no-repeat;
-    height: 160px;
-    background-size: cover;
-    background-position: center;
-}
-.activeEditMod{
-    background-color: rgba(7, 7, 7, 0.25);
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 !important;
-    &:hover{
-        opacity: 1;
+    &:hover {
+      color: #850c30;
     }
+  }
+  h4{
+    color: #850c30;
+  }
+
+  svg {
+    padding-right: 5px;
+  }
 }
-.inputFile{
-    opacity: 0;
-    display: none;
+
+.infoAboutUser {
+  background-color: #0c358514;
+  width: 260px;
+  max-width: 300px;
+  padding: 5px;
+  h3{
+    margin: 0;
+  }
+}
+
+.wrapperAvatar {
+  background-repeat: no-repeat;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.activeEditMod {
+  background-color: rgba(7, 7, 7, 0.25);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.inputFile {
+  opacity: 0;
+  display: none;
+}
+.wrapperName{
+  h4{
+    color:#850c30;
+  }
 }
 
 

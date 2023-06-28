@@ -77,7 +77,6 @@ export const saveMainPhoto = (photo) => {
 
 
 export const saveAvatarThinkCreator = (photo) => {
-  console.log(photo)
   return async (dispatch) => {
     let response = await loadAvatar.setPhoto(photo)
     if (response.resultCode === 0) {
@@ -104,11 +103,11 @@ export const getDataAuthorization = () => async (dispatch) => {
 }
 
 export const editAuthUserProfile =  (data,id)  => async (dispatch) =>  {
-
   let response = await authorization.editProfile(data)
+  console.log(response)
   if (response.resultCode === 0) {
-    let data = await usersApi.getUserProfile(id)
-    dispatch(SetUserProfile(data))
+    let dataProfile = await usersApi.getUserProfile(id)
+    dispatch(SetUserProfile(dataProfile))
   }
 }
 export default AuthorizationReducer

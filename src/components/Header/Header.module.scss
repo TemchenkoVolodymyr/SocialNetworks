@@ -11,8 +11,14 @@
     }
 }
 
-header img {
-    max-width: 100px;
+header{
+    img{
+        max-width: 100px;
+    }
+    a{
+        margin-left: 10px;
+    }
+
 }
 .headerName{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -39,6 +45,10 @@ header img {
         font-size: 15px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+    a{
+        text-decoration: none;
+        color:#850c30;
     }
 }
 .header_image{
