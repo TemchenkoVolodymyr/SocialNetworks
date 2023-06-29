@@ -1,10 +1,6 @@
 import axios from "axios";
 
 
-/* get и delete передают на сервер только строку адреса сервера(url)
-* post - создание чего то , put - добавление чего то
-* */
-
 let instance = axios.create({
   baseURL:"https://social-network.samuraijs.com/api/1.0/",
   withCredentials: true,
@@ -54,8 +50,7 @@ export const getProfile = {
       .then(response => response)
   },
   updateStatusProfile(status) {
-    return instance.put(`profile/status/`,{    // мы делаем put запрос(обновляем что то на сервере), по этому наш запрос имеет доп.поле с обьектом status(это то что мы хотим обновить)
-      // в документации к API написано как надо отправлять put запросы и как называть наш обьект
+    return instance.put(`profile/status/`,{
       status:status
     })
   }

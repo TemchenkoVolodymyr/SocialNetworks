@@ -3,7 +3,6 @@ import React from "react";
 
 
 
-// Это моя функция которая помогает создавать инпуты ,текстэриа, чекбоксы, помогает быстрее создававать форму
 export const createField = (name,component,type,placeholder = "",validators = null,text = "") => (
 
 <div>

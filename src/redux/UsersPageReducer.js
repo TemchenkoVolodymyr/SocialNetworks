@@ -1,5 +1,5 @@
 import {usersApi} from "../api/apiData";
-import {updateObjectFromArray} from "../utilits/object-helpers";
+
 
 let FOLLOW_ACTION = "FOLLOW-ACTION";
 let SET_USER = "SET-USER";
@@ -32,7 +32,7 @@ const UsersPageReducer = (state = initialState, action) => {
     }
     case SET_USER : {
 
-      return {...state, users: [...action.user]}  // получает state , в state получаем users и users который сейчас есть в state затераем новыми users которые приходят в  action
+      return {...state, users: [...action.user]}
     }
     case SET_CURRENT_PAGE : {
       return {...state,currentPage: action.currentPage}
@@ -68,11 +68,11 @@ export const isFetchin = (isFetch) => ({type:SET_IS_FETCHING,isFetch});
 
 export const isFollowingProgress = (isProgress,userId) => ({type:SET_FOLLOWING_IS_PROGRESS,isProgress,userId});
 
-export const getUsersThunkCreator = (current,pageSize)  => {           // тут происходит замыкание. Данные current и pageSize мы получаем в процесе замыкания
+export const getUsersThunkCreator = (current,pageSize)  => {
   return async (dispatch) => {
     dispatch(isFetchin(true))
     let data = await usersApi.getUsersPage(current, pageSize)
-console.log(data)
+
         dispatch(isFetchin(false))
         dispatch(setUsers(data.items));
         dispatch(setTotalUsersCount(data.totalCount));
@@ -82,9 +82,9 @@ export const getPageThunkCreator = (page,pageSize) => {
   return async (dispatch) => {
     dispatch(isFetchin(true))
     dispatch(currentPages(page))
-      //  method  life cycle  . Когда происходит переход на страницу то делает axios запрос и отдает их в setUsers
+
       let data = await usersApi.getUsersPage(page,pageSize)
-    console.log(data.items)
+
           dispatch(isFetchin(false))
           dispatch(setUsers(data.items))
 

@@ -129,8 +129,6 @@ export const setMyCurrentId = (id) => {
   }
 }
 
-// делаю рефактор кода , добавляю место .then    async await
-// что бы await работал надо перед функцией вызвать async
 export const getProfileThinkCreator = (userId) => {
   return async (dispatch) => {
     let data = await usersApi.getUserProfile(userId)
