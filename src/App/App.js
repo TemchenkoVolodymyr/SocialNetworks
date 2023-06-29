@@ -1,33 +1,37 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './App.scss';
-import {connect} from "react-redux";
-import {compose} from "redux";
+import {useDispatch, useSelector} from "react-redux";
 import {initializeApp} from "../redux/appReducer";
 import Loader from "../components/Loader/Loader";
 import RouterCollection from "./RouterCollection/RouterCollection";
 
+function App () {
 
-class App extends React.Component {
+  const initialization = useSelector((state) =>  state.app.initialization)
+  const [isInit,setIsInit] = useState(false)
+  const dispatch = useDispatch()
 
-  componentDidMount() {
-    this.props.initializeApp()
-  }
+  useEffect(() => {
+    dispatch(initializeApp())
 
-  render() {
-    if (!this.props.initialization) {
-      return <Loader/>
+    if(initialization){
+      setIsInit(true)
+    }else{
+      setIsInit(false)
     }
-    return (
-     <RouterCollection></RouterCollection>
-    );
+  },[initialization])
+
+
+
+  if(!isInit){
+    return <Loader/>
   }
+  return (
+    <>
+      <RouterCollection></RouterCollection>
+    </>
+  )
+
 }
 
-let mapStateToProps = (state) => {
-  return {
-    idUser: state.authorization.userId,
-    initialization: state.app.initialization
-  }
-}
-export default compose(
-  connect(mapStateToProps, {initializeApp})(App));
+export default App
