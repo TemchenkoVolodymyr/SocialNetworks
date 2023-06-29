@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./User.module.css"
+import s from "./User.module.scss"
 import {NavLink} from "react-router-dom";
 import defaultPhoto from "../../../assets/default.png"
 import {followStatus} from "../../../api/apiData";
@@ -33,11 +33,7 @@ const User = (props) => {
             <div className={s.wrapperDescription}>
               <div>
                 <p>{user.name}</p>
-                <p>{"user.comment"}</p>
-              </div>
-              <div>
-                <p>"user.location.country"</p>
-                <p>"user.location.city"</p>
+                <p>{user.status ? user.status : ""}</p>
               </div>
             </div>
           </div>

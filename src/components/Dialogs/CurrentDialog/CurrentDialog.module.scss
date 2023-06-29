@@ -1,0 +1,23 @@
+.avatar {
+  img {
+    width: 100px;
+    border-radius: 50px;
+  }
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #850c30;
+}
+
+.messages {
+padding: 10px;
+}

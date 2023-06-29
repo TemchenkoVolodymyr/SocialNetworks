@@ -1,12 +1,12 @@
 import React from 'react';
-import s from "../../components/Users/User/User.module.css";
+import s from "../../components/Users/User/User.module.scss";
 
 const Pagination = (props) => {
 
   let pageCurrent = Math.ceil(props.totalCount / props.pageSize);
   let pages = [];
 
-  for (let i = 1; i <= 50; i++) {
+  for (let i = 1; i <= 40; i++) {
     pages.push(i);
   }
 

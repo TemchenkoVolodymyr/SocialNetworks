@@ -58,8 +58,8 @@ const FormDialogs = (props) => {
   const onSubmit = (formData) => {
     // props.showNewMessage(formData.message)
 
-    setMessage(formData.message, profile.myCurrentId,'Rob')
-      .catch(error => console.log(error))
+    // setMessage(formData.message, profile.myCurrentId,'Rob')
+    //   .catch(error => console.log(error))
     formData.message = ""
   }
   return (

@@ -5,11 +5,25 @@
 .wrapperImage{
     max-width: 20%;
     margin-top: 17px;
+    button{
+        background-color: transparent;
+        color: rgba(96, 24, 24, 0.83);
+        border: 1px solid rgba(159, 14, 58, 0.75);;
+        border-radius: 15px;
+        padding:10px;
+        font-size: 20px;
+        &:hover{
+            background-color: #850c30;
+            color: #fcfcfc;
+            transform: scale(1.1);
+            transition: ease-in-out 0.2s;
+        }
+    }
 
 
 }
 .wrapperImage img{
-    max-width: 60%;
+    width: 100px;
     border-radius: 25px;
 }
 .wrapperDescription{
@@ -30,4 +44,5 @@ span:hover{
 }
 span{
     padding-right: 5px;
+
 }

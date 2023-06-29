@@ -49,7 +49,6 @@ export const AddNewMessageText = (id) => {
 }
 
 export const SetDialogsDatabase = (dialogs) => {
-    console.log(dialogs)
     return{
         type:SET_DIALOGS_DATABASE,
         data:dialogs

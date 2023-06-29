@@ -18,6 +18,7 @@ import {BsYoutube} from "react-icons/bs";
 import {SiSimilarweb} from "react-icons/si";
 import {NavLink} from "react-router-dom";
 import ProfileStatusWithHooks from "../ProfileStatus/ProfileStatusWithHooks";
+import defaultPhoto from '../../../../assets/default.png'
 
 
 const ProfileImg = (props) => {
@@ -108,6 +109,10 @@ const ProfileImg = (props) => {
     setEditMode(!editMode)
   }
 
+
+
+  let ava = profile?.photos?.small ? profile.photos.small : defaultPhoto
+
   if (!profile) {
     return <Loader/>
   }
@@ -115,7 +120,7 @@ const ProfileImg = (props) => {
     <>
       <section className={s.infoProfile}>
         <div className={s.profileAvatar}>
-          <div className={s.wrapperAvatar} style={{backgroundImage: `url(${myAvatar})`}}
+          <div className={s.wrapperAvatar} style={{backgroundImage: `url(${ava})`}}
                onFocus={() => setFocusChangeAvatar(true)} onClick={handleClickOpenInputFile}>
             <span className={s.activeEditMod}><HiPhotograph size={50}></HiPhotograph></span>
           </div>

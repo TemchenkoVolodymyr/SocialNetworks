@@ -16,6 +16,7 @@ import Login from "./components/Login/Login";
 import NavBar from "./components/Nav/NavBar";
 import Layout from "./router/Layout";
 import CurrentDialog from "./components/Dialogs/CurrentDialog/CurrentDialog";
+import ShowAllFriends from "./components/Nav/sideFriends/ShowAllFriends/ShowAllFriends";
 
 
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
           <Route path="/settings" element={<Settings/>}/>
           <Route path="/users" element={<UsersContainer/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/friends" element={<ShowAllFriends/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

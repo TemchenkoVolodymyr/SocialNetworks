@@ -7,6 +7,7 @@ import {
 } from "../../redux/UsersPageReducer";
 import Users from "./Users";
 import Loader from "../Loader/Loader";
+import s from './UsersContainer.module.scss'
 
 
 const UsersContainer = () => {
@@ -30,7 +31,7 @@ const UsersContainer = () => {
   return (
     <>
       {isFetching === true ? <Loader/> : null}
-      <div>
+      <div className={s.container}>
         <Users user={users} totalCount={totalUsersCount} currentPageData={currentPageData}
                isProgress={isProgress} followThunkCreator={followThunkCreator}
                pageSize={pageSize} current={current}

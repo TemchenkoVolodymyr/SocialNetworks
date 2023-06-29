@@ -6,7 +6,7 @@ import MessageItem from "../MessageItem/MessageItem";
 const DialogItem = (props) => {
 
   const {name,image,idDialog,text,date} = props
-  console.log(idDialog)
+
     let toAddress =   "/dialogs/" + idDialog;
     return (
         <div className={s.dialog}>

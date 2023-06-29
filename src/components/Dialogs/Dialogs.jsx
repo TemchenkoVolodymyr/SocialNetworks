@@ -14,7 +14,7 @@ const Dialogs = (props) => {
   const dispatch = useDispatch()
 
   const dialogDataBase = useSelector((state) => state.dialogPage.data)
-  console.log(dialogDataBase)
+
 
   useEffect(() => {
     const getDialogsFromDatabase = async () => {
@@ -32,7 +32,7 @@ const Dialogs = (props) => {
   const showNewMessage = (message) => {
     addNewMessage(message)
   }
-console.log(dialogDataBase)
+
   const DialogItems = dialogDataBase?.messages?.map(item => <DialogItem name={item.name} idDialog={item.id}
                                                                         image={item.image} date={item.date}
                                                                         text={item.items}></DialogItem>)
@@ -43,7 +43,7 @@ console.log(dialogDataBase)
         <div className={s.wrapperDialogs}>
           {DialogItems}
         </div>
-        <FormDialogs showNewMessage={showNewMessage}/>
+
       </div>
 
     </>
