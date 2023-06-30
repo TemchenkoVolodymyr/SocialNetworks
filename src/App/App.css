@@ -1,0 +1,16 @@
+.grid-wrapper {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 250px 950px;
+  grid-template-rows: 100px 600px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.content-wrapper {
+  grid-column: 2/3;
+  /*grid-row: 2/3;*/
+  background-color: #850c30;
+}
+
+/*# sourceMappingURL=App.css.map */

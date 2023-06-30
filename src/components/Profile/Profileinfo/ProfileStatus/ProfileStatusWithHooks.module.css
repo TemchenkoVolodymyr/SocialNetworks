@@ -1,0 +1,14 @@
+.statusWrapper {
+  background-color: rgba(133, 12, 48, 0.5019607843);
+  border-radius: 10px;
+  display: flex;
+  align-items: baseline;
+}
+.statusWrapper p {
+  font-size: 13px;
+  font-family: "Arial Rounded MT Bold";
+  font-style: italic;
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=ProfileStatusWithHooks.module.css.map */

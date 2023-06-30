@@ -1,0 +1,12 @@
+.form {
+  margin-top: 100px;
+}
+.form textarea {
+  border: none;
+  background-color: rgba(133, 12, 48, 0.63);
+  padding: 5px;
+  color: #fdfdfd;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=FormDialog.module.css.map */

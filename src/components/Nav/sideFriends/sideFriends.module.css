@@ -1,0 +1,22 @@
+.friends__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.friends__grid img {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+}
+
+.friends__header {
+  margin-top: 150px;
+  font-size: 30px;
+}
+.friends__header a {
+  text-decoration: none;
+  color: #850c30;
+}
+
+/*# sourceMappingURL=sideFriends.module.css.map */

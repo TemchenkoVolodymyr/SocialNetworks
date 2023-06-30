@@ -1,0 +1,52 @@
+.container {
+  max-width: 1200px;
+  display: flex;
+}
+
+.wrapperImage {
+  max-width: 20%;
+  margin-top: 17px;
+}
+.wrapperImage button {
+  background-color: transparent;
+  color: rgba(96, 24, 24, 0.83);
+  border: 1px solid rgba(159, 14, 58, 0.75);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 20px;
+}
+.wrapperImage button:hover {
+  background-color: #850c30;
+  color: #fcfcfc;
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
+
+.wrapperImage img {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.wrapperDescription {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  border: 1px solid brown;
+  border-radius: 17px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.active {
+  font-weight: bolder;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+span {
+  padding-right: 5px;
+}
+
+/*# sourceMappingURL=User.module.css.map */

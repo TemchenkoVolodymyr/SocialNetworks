@@ -1,0 +1,39 @@
+.dialog a {
+  text-decoration: none;
+  color: #020202;
+}
+
+.dialog .activeLink {
+  color: #850c30;
+  padding: 10px;
+}
+
+.dialog img {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+}
+
+.wrapperDialog {
+  align-items: center;
+  display: flex;
+}
+
+.dialog {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 350px;
+}
+.message p {
+  font-size: 13px;
+  font-family: "Agency FB";
+}
+
+/*# sourceMappingURL=DialogItem.module.css.map */

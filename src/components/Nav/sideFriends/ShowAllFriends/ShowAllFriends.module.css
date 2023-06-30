@@ -1,0 +1,18 @@
+.container {
+  padding: 15px;
+}
+.container img {
+  width: 100px;
+}
+
+.friends {
+  padding: 15px;
+}
+
+.header {
+  font-size: 25px;
+  font-style: italic;
+  color: #850c30;
+}
+
+/*# sourceMappingURL=ShowAllFriends.module.css.map */
