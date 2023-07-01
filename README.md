@@ -1,4 +1,22 @@
 ### `Social Network`
+## Technologies that i used in this project :
+  - JSX
+  - React && Redux
+  - Redux-Thunk
+  - API  https://social-network.samuraijs.com/docs
+  - Fetch request :
+     - get
+     - post
+     - put
+     - delete 
+  - CSS Modules && Sass
+  - React-router
+  - Firebase
+  - React Hooks
+  - Redux-Form
+
+  
+
 
 ## Objective of this project:
 - Understand how the react-redux bundle works
