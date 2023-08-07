@@ -1,6 +1,6 @@
 import React from "react";
 import {reduxForm} from "redux-form";
-import {setLoginData} from "../../redux/profilePageReducer";
+import {setLoginData} from "../../redux/profilePageReducer.ts";
 import {connect} from "react-redux";
 import {
   maxLengthCreator,

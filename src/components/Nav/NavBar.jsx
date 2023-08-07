@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Nav.module.css";
 import SideFriends from "./sideFriends/sideFriends";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar.tsx";
 import {useSelector} from "react-redux";
 
 

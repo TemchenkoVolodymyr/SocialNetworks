@@ -3,7 +3,7 @@ import s from "./Header.module.scss";
 import {NavLink} from "react-router-dom";
 import logo from "../../assets/logo.png"
 import {useDispatch} from "react-redux";
-import {deleteLogin} from "../../redux/profilePageReducer";
+import {deleteLogin} from "../../redux/profilePageReducer.ts";
 import CustomButton from "../../utilits/CustomButton/CustomButton";
 
 

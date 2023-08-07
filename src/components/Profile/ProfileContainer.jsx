@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {
   getProfileThinkCreator, SetProfileStatus,
   setProfileStatusThinkCreator,
-} from "../../redux/profilePageReducer";
+} from "../../redux/profilePageReducer.ts";
 import {useParams} from "react-router-dom";
 import {getProfile} from "../../api/apiData";
 

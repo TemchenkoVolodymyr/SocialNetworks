@@ -5,7 +5,7 @@ import FormDialogs from "./FormDialog/FormDialogs";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "../../firebase/firebase";
 import {useDispatch, useSelector} from "react-redux";
-import {SetDialogsDatabase} from "../../redux/dialogPageReducer";
+import {SetDialogsDatabase} from "../../redux/dialogPageReducer.ts";
 
 
 const Dialogs = (props) => {

@@ -2,7 +2,7 @@ import React from "react";
 
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
-import {ShowNewPostText,AddNewPost} from "../../../redux/profilePageReducer";
+import {ShowNewPostText,AddNewPost} from "../../../redux/profilePageReducer.ts";
 
 
 

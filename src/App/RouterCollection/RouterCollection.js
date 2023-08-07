@@ -7,7 +7,7 @@ import CurrentDialog from "../../components/Dialogs/CurrentDialog/CurrentDialog"
 import News from "../../components/News/News";
 import Musics from "../../components/Musics/Musics";
 import Settings from "../../components/Settings/Settings";
-import UsersContainer from "../../components/Users/UsersContainer";
+import UsersContainer from "../../components/Users/UsersContainer.tsx";
 import Login from "../../components/Login/Login";
 import ShowAllFriends from "../../components/Nav/sideFriends/ShowAllFriends/ShowAllFriends";
 

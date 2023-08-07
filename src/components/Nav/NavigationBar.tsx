@@ -1,5 +1,5 @@
-import React from 'react';
-import s from "./NavigationBar.module.scss";
+import * as React from 'react';
+import  s from './NavigationBar.module.scss'
 import {NavLink} from "react-router-dom";
 const NavigationBar = (props) => {
 

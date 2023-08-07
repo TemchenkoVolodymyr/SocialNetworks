@@ -1,5 +1,5 @@
 import React from "react";
-import {AddNewMessageText, ShowNewMessageText} from "../../redux/dialogPageReducer";
+import {AddNewMessageText, ShowNewMessageText} from "../../redux/dialogPageReducer.ts";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withProfileComponent} from "../../HOC/withProfileComponent";
