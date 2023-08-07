@@ -7,7 +7,7 @@ import {
   editAuthUserProfile,
   getDataAuthorization,
   saveAvatarThinkCreator
-} from "../../../../redux/AuthorizationReducer";
+} from "../../../../redux/AuthorizationReducer.ts";
 import CustomButton from "../../../../utilits/CustomButton/CustomButton";
 import {HiPhotograph} from "react-icons/hi";
 import {FaInstagram} from "react-icons/fa";

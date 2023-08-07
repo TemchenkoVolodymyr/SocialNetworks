@@ -3,7 +3,7 @@ import {
   getProfileThinkCreator, SetProfileStatus,
   setProfileStatusThinkCreator,
   updateProfileStatusThinkCreator
-} from "../../../../redux/profilePageReducer";
+} from "../../../../redux/profilePageReducer.ts";
 import {useDispatch, useSelector} from "react-redux";
 import s from './ProfileStatusWithHooks.module.scss'
 import {getProfile} from "../../../../api/apiData";

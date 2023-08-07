@@ -10,7 +10,7 @@ const Post = (props) => {
   const defaultImagePost = "https://th.bing.com/th/id/OIP.q3YWosr4nPpGqfHYbax2iAHaGv?pid=ImgDet&rs=1";
 
   const imageItem = databasePost?.image
-  console.log(imageItem)
+
   return (
     <div className={s.post}>
 

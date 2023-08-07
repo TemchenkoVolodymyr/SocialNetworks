@@ -1,7 +1,8 @@
-import React from 'react';
-import s from "../../components/Users/User/User.module.scss";
+import * as React from 'react';
+import  s from "../../components/Users/User/User.module.scss";
+import {UsersComponentType} from "../../types/types";
 
-const Pagination = (props) => {
+const Pagination:React.FC<UsersComponentType> = (props) => { // Paginator:React.FC<PropsType> это мы указываем тип нашей компоненты и указываем тип пропсов
 
   let pageCurrent = Math.ceil(props.totalCount / props.pageSize);
   let pages = [];

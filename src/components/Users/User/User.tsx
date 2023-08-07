@@ -1,14 +1,28 @@
-import React from "react";
+import * as React from "react";
 import s from "./User.module.scss"
 import {NavLink} from "react-router-dom";
 import defaultPhoto from "../../../assets/default.png"
 import {followStatus} from "../../../api/apiData";
 import {useDispatch} from "react-redux";
-import {followThunkCreator} from "../../../redux/UsersPageReducer";
+import {followThunkCreator} from "../../../redux/UsersPageReducer.ts";
+import { UsersType } from "../../../types/types";
 
-const User = (props) => {
 
-  const dispatch = useDispatch();
+
+type UserDataType = {
+  data : {
+    user:Array<UsersType>,
+    isProgress:Array<number>,
+    totalCount: number,
+    currentPageData: (page : number) => void,
+    followThunkCreator: (userId:number,callback:() => void) => void,
+    pageSize: number,
+    current: any
+  }
+}
+const User:React.FC <UserDataType> = (props) => {
+
+  const dispatch : any = useDispatch();
 
   let currentUser = props.data.user
 
