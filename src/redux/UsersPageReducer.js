@@ -53,7 +53,6 @@ const UsersPageReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 export const isFollow = (userId) => {
   return {
     type: FOLLOW_ACTION,
