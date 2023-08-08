@@ -2,7 +2,7 @@ import * as React from "react";
 import s from "./User.module.scss"
 import {NavLink} from "react-router-dom";
 import defaultPhoto from "../../../assets/default.png"
-import {followStatus} from "../../../api/apiData";
+import {followStatus} from "../../../api/apiData.ts";
 import {useDispatch} from "react-redux";
 import {followThunkCreator} from "../../../redux/UsersPageReducer.ts";
 import { UsersType } from "../../../types/types";

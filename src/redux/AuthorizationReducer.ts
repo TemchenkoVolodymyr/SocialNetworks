@@ -1,4 +1,4 @@
-import {authorization, DataEditProfile, getProfile, loadAvatar, Me, ResultCodes, usersApi} from "../api/apiData";
+import {authorization, DataEditProfile, getProfile, loadAvatar, Me, ResultCodes, usersApi} from "../api/apiData.ts";
 import {
     LOG_OUT_DATA, ProfileType,
     SAVE_AVATAR,

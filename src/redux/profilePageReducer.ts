@@ -1,4 +1,4 @@
-import {authorization, getProfile, ResultCodes, usersApi} from "../api/apiData";
+import {authorization, getProfile, ResultCodes, usersApi} from "../api/apiData.ts";
 import {stopSubmit} from "redux-form";
 import {type} from "os";
 import {Dispatch} from "redux";
@@ -175,7 +175,7 @@ export const setMyCurrentId = (id):SetMyCurrentID => {
 }
 
 type ActionsTypes = SetMyCurrentID | LogoutType | LoginDataType | SetProfileStatus | SetUserProfileType | AddNewPostType | ShowNewPostText
-type DispatchTypes = Dispatch<ActionsTypes>
+export type DispatchTypes = Dispatch<ActionsTypes>
 export const getProfileThinkCreator = (userId : number) => {
   return async (dispatch : DispatchTypes) => {
     let data = await usersApi.getUserProfile(userId)

@@ -24,6 +24,8 @@ let rootReducer = combineReducers({
 
 });
 
+export type InferValueTypes<T> = T extends {[key : string] : infer U} ? U : never
+
  type RootReducerType = typeof rootReducer;
  export type AppReducerType = ReturnType<RootReducerType> // это мы пишем если используем класс компонент или что бы задать тип стейта для thunk action
 

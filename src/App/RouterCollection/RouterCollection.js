@@ -8,7 +8,7 @@ import News from "../../components/News/News";
 import Musics from "../../components/Musics/Musics";
 import Settings from "../../components/Settings/Settings";
 import UsersContainer from "../../components/Users/UsersContainer.tsx";
-import Login from "../../components/Login/Login";
+import Login from "../../components/Login/Login.tsx";
 import ShowAllFriends from "../../components/Nav/sideFriends/ShowAllFriends/ShowAllFriends";
 
 const RouterCollection = () => {

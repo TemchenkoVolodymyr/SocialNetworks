@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Field, reduxForm} from "redux-form";
 import {connect, useSelector} from "react-redux";
-import {Textarea} from "../../../../validationForm/FormsControls/FormControls";
-import {maxLengthCreator, minLengthCreator, requiredField} from "../../../../validationForm/validations";
+import {Textarea} from "../../../../validationForm/FormsControls/FormControls.tsx";
+import {maxLengthCreator, minLengthCreator, requiredField} from "../../../../validationForm/validations.tsx";
 import CustomButton from "../../../../utilits/CustomButton/CustomButton";
 import s from './PostForm.module.scss'
 import {arrayUnion, doc, updateDoc, addDoc, collection, setDoc, getFirestore,getDoc} from "firebase/firestore";

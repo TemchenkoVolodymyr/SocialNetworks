@@ -6,7 +6,7 @@ import {
   setProfileStatusThinkCreator,
 } from "../../redux/profilePageReducer.ts";
 import {useParams} from "react-router-dom";
-import {getProfile} from "../../api/apiData";
+import {getProfile} from "../../api/apiData.ts";
 
 
 const ProfileContainer = (props) => {

@@ -1,22 +1,22 @@
-import React from "react";
-import {reduxForm} from "redux-form";
-import {setLoginData} from "../../redux/profilePageReducer.ts";
-import {connect} from "react-redux";
+import * as React from "react";
+import {InjectedFormProps, reduxForm} from "redux-form";
+import { setLoginData} from "../../redux/profilePageReducer.ts";
+import { useDispatch} from "react-redux";
 import {
   maxLengthCreator,
   minLengthCreator,
   requiredField
-} from "../../validationForm/validations";
-import {Input} from "../../validationForm/FormsControls/FormControls";
+} from "../../validationForm/validations.tsx";
+import {Input} from "../../validationForm/FormsControls/FormControls.tsx";
 import s from "../../validationForm/FormsControls/FormControls.module.css";
-import {createField} from "../../validationForm/FormsControls/createField";
+import {createField} from "../../validationForm/FormsControls/createField.tsx";
+import {AppReducerType} from "../../redux/reduxe-store";
+
 
 const maxLength10 =  maxLengthCreator(30);
 const minLength5 = minLengthCreator(5);
 
-
-
-export const LoginForm = ({error,handleSubmit}) => {
+export const LoginForm:React.FC<InjectedFormProps<FormDataTypes>> = ({error,handleSubmit}) => {
   return (
 
     <form onSubmit={handleSubmit}>
@@ -34,9 +34,19 @@ export const LoginForm = ({error,handleSubmit}) => {
 const LoginFormRedux = reduxForm({
   form: 'login'
 })(LoginForm)
-const Login = (props) => {
-  const onSubmit = (formData) => {
-    props.dispatch(setLoginData(formData))
+
+
+type FormDataTypes = {
+    email : string,
+    password:string,
+    rememberMe:boolean,
+
+}
+const Login:React.FC<AppReducerType> =  () => {
+
+  const dispatch : any = useDispatch()
+  const onSubmit = (formData : FormDataTypes) => {
+     dispatch(setLoginData(formData))
   }
   return (
     <>
@@ -46,10 +56,4 @@ const Login = (props) => {
   )
 }
 
-let mapStateToProps = (store) => {
-  return {
-    errorMessageLogin:store.profilePage.loginError
-  }
-}
-
-export default connect(mapStateToProps)(Login);
+export default Login;
